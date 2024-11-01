@@ -1,7 +1,7 @@
 # Bike Trip Prediction Model
 
 ## Description
-The goal of this project is to develop a model to predict the number of bike trips that occur on any given target streets in New York City. The model leverages open Citi Bike data and the MapBox Directions API to generalize trips routes via a random forest model. The impetus for this project is an advocacy effort to improve bike and pedestrian infrastructure along two streets in Brooklyn: Dean Street and Bergen Street.
+The goal of this project is to develop a model to predict the number of bike trips that occur on any given target street in New York City. The model leverages open Citi Bike data and the MapBox Directions API to generalize trips routes via a random forest model. The impetus for this project is an advocacy effort to improve bike and pedestrian infrastructure along two streets in Brooklyn: Dean Street and Bergen Street.
 
 ## Installation
 Prerequisites can be found in `requirements.txt`. These notebooks should work with most distributions and versions of the main libraries (pandas, sklearn).
@@ -13,7 +13,7 @@ Prerequisites can be found in `requirements.txt`. These notebooks should work wi
 - `model.ipynb`: Trains a random forest model and predicts the total number of trips on your target streets.
 
 ### Instructions
-1. Download [Citi Bike data](https://s3.amazonaws.com/tripdata/index.html). I downloaded `2023-citibike-tripdata.zip` and exported it the root folder. If you wish to use later data, you will need to update the directory names in all the notebooks.
+1. Download [Citi Bike data](https://s3.amazonaws.com/tripdata/index.html). I downloaded `2023-citibike-tripdata.zip` and exported it to the root folder. If you wish to use later data, you will need to update the directory names in all the notebooks.
 2. Run `et.ipynb`. This notebook: 
   - Extracts all trip data and compiles it into a single large df of ALL Citi Bike trips (~35M rows). Saved as `2023_data.pkl`
   - Compiles the unique trips into a single df. Saved as `unique_trips.pkl`
