@@ -26,6 +26,7 @@ Prerequisites can be found in `requirements.txt`. These notebooks should work wi
 - *On class sizes:* Most likely, trips with your target street(s) are a small minority of all unique trips (possibly <1% even). We use SMOTE to generate new, similar samples to balance the class sizes. A `k_neighbors` value of 2 or 3 works well.
 - *On Citi Bike:* Once the model is trained, we use it to predict the unique trips that would've taken our target streets. We then join this to the entire dataset to get the count of total trips. Finally, [according to NYCDOT](https://www.nyc.gov/office-of-the-mayor/news/847-23/mayor-adams-dot-commissioner-rodriguez-lyft-expansion-improvements-citi-bike-system) Citi Bike makes up less than 25% of all bike trips. So we multiply our result by `4` to get total trips.
 - *On tuning:* I did not invest much time in tuning. An F1 score of 0.92 on the target class was more than sufficient. However, that doesn't mean there isn't room for improvement. Given more time I'd try a wider swath of models, namely, `xgboost`. 
+- *vFuture:* Once a large enough sample routed via MapBox, it's not necessary to continually resample. This could live as a web app that quickly trains a smaller, less accurate model and provides results immediately.
 
 ## License
 MIT License
