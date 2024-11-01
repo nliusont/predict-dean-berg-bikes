@@ -23,7 +23,7 @@ Prerequisites can be found in `requirements.txt`. These notebooks should work wi
 
 ### Notes
 - *On sampling:* Simply randomly selecting trips would likely result in many similar trips being sampled. I.e. The sample would probably contain many trips from Downtown to Midtown because these trips are common. Since we need the model to generalize based on geographic coordinates, we need to sample a geographically diverse set of trips. To accomplish this, I split the city into a 10x10 grid, then sample randomly from each grid cell for start and end points.
-- *On class sizes:* Most likely, trips with your target street(s) are a small minority of all unique trips (<1% even). We use SMOTE to generate new, similar samples to balance the class sizes. A `k_neighbors` value of 2 or 3 works well.
+- *On class sizes:* Most likely, trips with your target street(s) are a small minority of all unique trips (possibly <1% even). We use SMOTE to generate new, similar samples to balance the class sizes. A `k_neighbors` value of 2 or 3 works well.
 - *On Citi Bike:* Once the model is trained, we use it to predict the unique trips that would've taken our target streets. We then join this to the entire dataset to get the count of total trips. Finally, [according to NYCDOT](https://www.nyc.gov/office-of-the-mayor/news/847-23/mayor-adams-dot-commissioner-rodriguez-lyft-expansion-improvements-citi-bike-system) Citi Bike makes up less than 25% of all bike trips. So we multiply our result by `4` to get total trips.
 
 ## License
