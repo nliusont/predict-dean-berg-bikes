@@ -18,6 +18,7 @@ Prerequisites can be found in `requirements.txt`. These notebooks should work wi
   - Extracts all trip data and compiles it into a single large df of ALL Citi Bike trips (~35M rows). Saved as `2023_data.pkl`
   - Compiles the unique trips into a single df. Saved as `unique_trips.pkl`
 3. Run `directions.ipynb`, this notebook samples from the unique trips the `sample_size` you define. It uses your `mapbox_api_key` to request directions. It then checks for your `target_streets` in the directions that are returned.
+- Due to API rate limits, this notebook can take time. Approximately 90 min per 10,000 samples.
 - Results are stored as `sampled_trips.pkl`
 4. Run `model.ipynb`, this notebook takes the results from your samples and trains a random forest model to predict whether a trip contains your target streets based on the start and end points. It then runs predictions on the entire 2023 dataset, giving you a count of the number of trips on your target streets.
 
